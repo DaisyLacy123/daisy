@@ -1,0 +1,17 @@
+```lua
+local function giveFreeCharacter(player)
+    local characterModel = game.ServerStorage:FindFirstChild("Hope Mikaelson then Inadu then Freya then Bonnie then Dahila then Davina")
+    
+    if characterModel then
+        local newCharacter = characterModel:Clone()
+        newCharacter.Parent = player.Character
+        newCharacter:SetPrimaryPartCFrame(player.Character.HumanoidRootPart.CFrame)
+    else
+        print("Free character model found")
+    end
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    giveFreeCharacter(player)
+end)
+```
